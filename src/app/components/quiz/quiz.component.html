@@ -1,0 +1,13 @@
+<h2>Quiz!</h2>
+<div class="quiz">
+  <ng-container *ngIf="!isFinished">
+    <p><span>{{renderingQuiz().number}})</span> {{renderingQuiz().question}} ?</p>
+    <input placeholder="your answer" type="text" [(ngModel)]="answer">
+    <button *ngIf="!isLastQuestion()" (click)="nextQuestion()">NEXT</button>
+    <button *ngIf="isLastQuestion()" (click)="showResult()">show result</button>
+  </ng-container>
+  <ng-container *ngIf="isFinished">
+    <h2>{{this.result}} / 3</h2>
+    <button (click)="reset()">play again</button>
+  </ng-container>
+</div>

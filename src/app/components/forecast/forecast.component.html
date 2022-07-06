@@ -1,0 +1,14 @@
+<h2>Forecast!</h2>
+<div class="forecast">
+  <h3>{{currentWeather.location.name}}</h3>
+  <p>{{currentWeather.location.localtime}}</p>
+  <img [src]="currentWeather.current.condition.icon" [alt]="currentWeather.current.condition.text">
+  <span>{{currentWeather.current.condition.text}}</span>
+  <div>Temp: {{currentWeather.current.temp_c}} C</div>
+  <div>Feels like: {{currentWeather.current.feelslike_c}} C</div>
+</div>
+
+<div>
+  <input placeholder="your city..." [(ngModel)]="input" type="text">
+  <button (click)="get()">Give me forecast</button>
+</div>

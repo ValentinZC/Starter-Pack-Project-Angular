@@ -1,0 +1,15 @@
+<h2>TODO!</h2>
+<div class="todo">
+  <div class="todo-input">
+    <input [(ngModel)]="input" type="text">
+    <button (click)="addHandler()">TODO</button>
+  </div>
+  <div class="todo-items">
+    <ng-container *ngFor="let item of items; let i = index">
+      <div class="todo-item">
+        <span>{{i + 1}}. {{item.body}}</span>
+        <button (click)="remove(item.id)">X</button>
+      </div>
+    </ng-container>
+  </div>
+</div>

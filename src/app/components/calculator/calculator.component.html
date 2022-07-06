@@ -1,0 +1,11 @@
+<h2>Calculator!</h2>
+<div class="calc">
+  <div class="calc-input">
+    <input disabled [(ngModel)]="calcInput" type="text">
+  </div>
+  <div class="calc-option">
+    <ng-container *ngFor="let btn of btns">
+      <button (click)="calculate($event)">{{btn}}</button>
+    </ng-container>
+  </div>
+</div>
